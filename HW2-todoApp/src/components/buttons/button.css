@@ -1,0 +1,16 @@
+
+    .button{
+      width:3.5rem;
+      height: 2rem;
+      margin: 0.2rem;
+      color: white;
+      background-color: rgb(30, 30, 174);
+      border-radius: 0.4rem;
+    }
+    .last-two-buttons{
+      background-color: #f39c12;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      width:100%;
+    }
