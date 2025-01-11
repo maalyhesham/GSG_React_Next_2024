@@ -1,0 +1,20 @@
+.form-wrapper {
+  border: 1px solid black;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.form-wrapper .task-input {
+  flex-basis: 100%;
+  padding: 10px;
+  border: 2px solid #39D88B;
+
+}
+.form-wrapper .submit {
+  padding: 10px;
+  background-color:  #39D88B;
+  font-weight: bold;
+  /* color: #ffffff; */
+}
