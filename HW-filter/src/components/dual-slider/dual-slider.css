@@ -1,0 +1,57 @@
+.dual-range-slider {
+  margin: 20px 0;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
+
+.dual-range-slider .track {
+  height: 8px;
+  background: #f0f0f0;
+  position: relative;
+  border-radius: 5px;
+  margin: 10px 0;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dual-range-slider .track-active {
+  position: absolute;
+  height: 8px;
+  background: linear-gradient(to right, #007b8f, #00d4d1);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.dual-range-slider .thumb {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: #007b8f;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  border: 3px solid white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dual-range-slider .thumb:active,
+.dual-range-slider .thumb:focus {
+  height: 30px;
+  width: 30px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  background-color: #005f73;
+  border: 3px solid #ffffff;
+}
+
+.dual-range-slider .range-values {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #444;
+  font-weight: bold;
+  padding: 0 20px;
+}
+
+.dual-range-slider .range-values span {
+  color: #007b8f;
+}

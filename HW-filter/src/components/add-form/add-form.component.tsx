@@ -1,11 +1,9 @@
-
 import "./add-form.css";
-import {  useState } from "react";
+import { useEffect, useState } from "react";
 import { IStudent } from "../../types";
 import CoursesListForm from "../courses-list-form/courses-list-form.component";
 import { validateStudent } from "../../utils/validation.ts";
 import { useNavigate } from "react-router-dom";
-
 
 const INITIAL_STUDENT = {
   age: 0,
@@ -27,6 +25,10 @@ const AddForm = (props: IProps) => {
   const [errorsList, setErrorsList] = useState<string[]>([]);
   const [message, setMessage] = useState("");
   const nav = useNavigate();
+
+  useEffect(() => {
+    console.log("Hello from Add Form component!");
+  }, []);
 
   const handleChange = (field: string, value: any) => {
     setStudent({ ...student, [field]: value });
@@ -119,4 +121,3 @@ const AddForm = (props: IProps) => {
 };
 
 export default AddForm;
-

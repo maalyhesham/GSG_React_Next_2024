@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import Student from "../components/student/student.component";
 import { IStudent } from "../types";
-import { useSearchParams } from "react-router-dom";
-import React from "react";
+import DualSlider from "../components/dual-slider/dual-slider.component";
 
 interface IProps {
   totalAbsents: number;
@@ -11,11 +11,10 @@ interface IProps {
   onRemove: () => void;
 }
 
-const COURSES_FILTERS = ["Math", "HTML", "CSS", 'react'];
+const COURSES_FILTERS = ["Math", "HTML", "CSS", "OOP"];
 
-const Main = (props: IProps) => {
+const Main: React.FC<IProps> = (props) => {
   const { totalAbsents, studentsList } = props;
-
   const [filteredList, setFilteredList] = useState<IStudent[]>(studentsList);
   const [minAbsents, setMinAbsents] = useState<number>(0);
   const [maxAbsents, setMaxAbsents] = useState<number>(100);
@@ -129,16 +128,18 @@ const Main = (props: IProps) => {
           placeholder="Search"
           onChange={handleSearch}
           value={params.get("q") || ""}
+          className="search-bar"
         />
         <select
           value={params.get("graduated") || "all"}
           onChange={handleGradFilter}
+          className="select-filter"
         >
           <option value="all">All</option>
           <option value="grad">Graduated</option>
           <option value="non-grad">Not Graduated</option>
         </select>
-        <div>
+        <div className="course-filters">
           {COURSES_FILTERS.map((c) => (
             <React.Fragment key={c}>
               <input
@@ -147,13 +148,23 @@ const Main = (props: IProps) => {
                 value={c}
                 onChange={handleCourseFilter}
                 checked={params.getAll("courses").includes(c)}
+                className="course-checkbox"
               />
               <label htmlFor={c}>{c}</label>&nbsp;&nbsp;
             </React.Fragment>
           ))}
         </div>
-       
-        <button onClick={resetFilters} className="button">
+        <DualSlider
+          min={0}
+          max={100}
+          step={1}
+          values={[minAbsents, maxAbsents]}
+          onChange={(values: number[]) => {
+            setMinAbsents(values[0]);
+            setMaxAbsents(values[1]);
+          }}
+        />
+        <button onClick={resetFilters} className="button reset-btn">
           Reset Filters
         </button>
       </div>

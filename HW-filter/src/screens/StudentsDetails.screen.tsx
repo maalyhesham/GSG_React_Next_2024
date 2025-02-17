@@ -9,6 +9,7 @@ const StudentDetails = () => {
   const [currentStudent, setCurrentStudent] = useState<IStudent>();
 
   useEffect(() => {
+    // find the student with ID id from the local storage database
     const studentsListStr = localStorage.getItem("students-list");
     if (studentsListStr) {
       const stdList: IStudent[] = JSON.parse(studentsListStr);

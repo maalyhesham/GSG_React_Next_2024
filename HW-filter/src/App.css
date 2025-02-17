@@ -32,12 +32,12 @@ body {
 }
 
 .main.wrapper {
-  border-left: 8px solid #b16387;
+  border-left: 8px solid #da498d;
 }
 
 nav {
   margin: 20px 0;
-  border-bottom: 2px solid #b16387;
+  border-bottom: 2px solid #da498d;
   display: flex;
   column-gap: 10px;
 }
@@ -54,7 +54,9 @@ nav > a:hover {
   color: #93729d;
 }
 
-
+nav > a.active {
+  border-bottom: 3px solid #da498d;
+}
 
 .main-screen .list {
   flex-wrap: wrap;
@@ -74,8 +76,9 @@ nav > a:hover {
   font-size: 1.5rem;
   font-weight: bold;
   color: #da498d;
+  text-transform: uppercase;
   text-align: left;
-
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .add-screen,
@@ -83,3 +86,54 @@ nav > a:hover {
   min-height: 500px;
 }
 
+/* div.spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #da498d;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 30px auto;
+} */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.main-screen {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+.stats {
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: #007b8f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #005f73;
+}
+
+.search-bar {
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 4px;
+  width: 100%;
+  max-width
+}

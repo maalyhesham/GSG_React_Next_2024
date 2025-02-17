@@ -4,6 +4,7 @@ const useLocalStorage = (state: any, storageKey: string) => {
   const [storedData, setStoredData] = useState<any>();
 
   useEffect(() => {
+    // Read the data on the first render
     const strData = localStorage.getItem(storageKey);
     try {
       if (strData !== null) {
